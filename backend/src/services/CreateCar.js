@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { Decimal128 } = require('mongodb');
 
 const CreateCar = new mongoose.Schema({
   name: String,
