@@ -1,12 +1,18 @@
-const createCar = require('../services/CreateCar');
+const CreateCar = require('../services/CreateCar');
 
 module.exports = {
   async index(req, res) {
-    // const response = await createCar();
+    const { name, marca, modelo, ano, preco, cor }
 
-    create = await createCar()
-    
+    const create = await CreateCar.create({
+      name,
+      marca,
+      modelo,
+      ano,
+      preco,
+      cor
+    });
+    console.log(req.body)
+    return res.json(create)
   }
 }
-
-// cada carro tendo uma marca, modelo, nome, ano de fabricação, preço e cor.
